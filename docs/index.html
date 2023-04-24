@@ -22,6 +22,50 @@
 
   <!-- Custom fonts used for custom icons like Emacs, Gradescope, etc. -->
   <link href='assets/css/customfontpack.css' rel='stylesheet'/>
+  <style>
+    /**
+     * Custom color coding for schedule of topics
+     * https://fomantic-ui.com/usage/theming.html#sitewide-defaults
+     */
+    .eecs485-notopic td:first-child {
+      border-left: 10px solid #0E6EB8 !important;
+    }
+    .eecs485-topic1-webapps td:first-child {
+      border-left: 10px solid #A0A0A0 !important;
+    }
+    .eecs485-topic1-webapps-header {
+      color: #FFFFFF;
+      text-align: center;
+      background-color: #A0A0A0 !important;
+    }
+    .eecs485-topic2-systems td:first-child {
+      border-left: 10px solid #FBBD08 !important;
+    }
+    .eecs485-topic2-systems-header {
+      color: #FFFFFF;
+      text-align: center;
+      background-color: #FBBD08 !important;
+    }
+    .eecs485-topic3-semantics td:first-child {
+      border-left: 10px solid #A5673F !important;
+    }
+    .eecs485-topic3-semantics-header {
+      color: #FFFFFF;
+      text-align: center;
+      background-color: #A5673F !important;
+    }
+    /**
+     * We want the sidebar toggle to remain visible as people scroll around the
+     * page. Hence, we need to "fix" its position relative to the viewer's
+     * screen.
+     */
+     #left-sidebar-toggle {
+      position: fixed;
+      right: 2em;
+      /* The labels on cards have z-index of 100. The button should appear above them! */
+      z-index: 101;
+    }
+  </style>
 </head>
 
 
