@@ -1,0 +1,2638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="EECS 280"/>
+  <meta name="keywords" content="EECS280, EECS 280, Programming and Introductory Data Structures, University of Michigan Computer Science"/>
+  <title>EECS 280</title>
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/eecs280favicon.ico">
+
+  <!-- Fomantic UI CSS library
+       https://fomantic-ui.com/introduction/getting-started.html#using-a-cdn-provider -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.1-beta.38/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.1-beta.38/dist/semantic.min.js"></script>
+
+  <!-- FullCalendar JS library
+       https://fullcalendar.io/docs
+       https://fullcalendar.io/docs/google-calendar  -->
+  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+
+  <!-- Custom fonts used for custom icons like Emacs, Gradescope, etc. -->
+  <link href='assets/css/customfontpack.css' rel='stylesheet'/>
+</head>
+
+
+<body>
+  <!-- Nav bar on left side -->
+  <div class="ui left vertical sidebar labeled icon menu">
+
+    <!-- Logo and Course Title -->
+    <div class="item">
+      <a class="ui logo icon image tiny" href="./#">
+        <img src="assets/images/eecs280logo.png" alt="logo">
+      </a>
+      <br>
+      <br>
+      <a href="./#"><b>EECS 280</b></a>
+    </div>
+
+    <!-- Internal fragment links -->
+    <div class="item">
+      <div class="menu">
+        <a class="item" href="#requests">
+          Requests
+        </a>
+        <a class="item" href="#schedule">
+          Schedule
+        </a>
+        <a class="item" href="#people">
+          People
+        </a>
+      </div>
+    </div><!-- /Internal links -->
+
+    <!-- Internal second-level links -->
+    <div class="item">
+      <div class="menu">
+        <a class="item" href="syllabus.html">
+          Syllabus
+        </a>
+        <a class="item" href="syllabus.html#projects">
+          Projects
+        </a>
+        <a class="item" href="https://eecs280staff.github.io/tutorials/">
+          Tutorials
+        </a>
+        <a class="item" href="calculator.html" target="_blank">
+          Grade calc
+        </a>
+        <a class="item" href="/archive/">
+          Archive
+        </a>
+      </div>
+    </div><!-- /Internal second-level links -->
+
+    <!-- External links -->
+    <div class="menu">
+      <a class="item" href="https://piazza.com/umich/winter2023/eecs280/" target="_blank">
+        <i class="ui big icon icon-piazza"></i><br>
+        Piazza
+      </a>
+      <!-- <div data-tooltip="Next week!" class="disable item" href="https://eecsoh.eecs.umich.edu" target="_blank"> -->
+      <a class="item" href="https://eecsoh.eecs.umich.edu/queues/23NARp3KOEA5IDygnDVCqp5F6Fg" target="_blank">
+        <img class="ui centered mini image" src="assets/images/office_hours_lobster.jpg" alt="office hours lobster"/>
+        Office Hours
+      </a>
+      <a class="item" data-tooltip="Umich login!" href="https://drive.google.com/drive/u/1/folders/1lhuiwb2PRGS5F7cXupXe-6SyTBeMc_aa" target="_blank">
+        <i class="ui big icon google drive"></i>
+        Files
+      </a>
+      <a class="item" href="https://www.gradescope.com/courses/477613" target="_blank">
+         <i class="ui big icon icon-gradescope"></i>
+        Gradescope
+      </a>
+      <a class="item" href="https://umich.instructure.com/courses/566839" target="_blank">
+        <i class="ui big icon icon-canvas"></i>
+        Canvas
+      </a>
+      <a class="item" href="https://discord.gg/fsU8yrDVTz">
+        <i class="ui big discord icon"></i>
+        Discord
+      </a>
+    </div><!-- /External links -->
+  </div><!-- /Nav bar -->
+
+
+  <!-- Main page  -->
+  <div class="pusher">
+    <div class="ui text container">
+      <button class="ui right floated icon button" id="left-sidebar-toggle">
+        <i class="bars icon"></i>
+      </button>
+
+
+      <!-- Header and description -->
+      <h1>EECS 280: Programming and Intro Data Structures</h1>
+      <div class="inline">
+        <i>The University of Michigan</i>
+        <div class="ui blue label">Winter 2023</div>
+
+        <!-- Example labels for current term COPY THESE, DO NOT REMOVE
+        <div class="ui blue label">Winter 2021</div>
+        <div class="ui brown label">Fall 2021</div>
+        <div class="ui olive label">Spring 2021</div>
+        -->
+
+        <!-- Example nav links to future terms COPY THESE, DO NOT REMOVE
+        <a class="ui basic blue left pointing label" href="w22">Looking for Winter 2022?</a>
+        <a class="ui basic olive left pointing label" href="sp22">Looking for Spring 2022?</a>
+        <a class="ui basic brown left pointing label" href="f22">Looking for Fall 2022?</a>
+        -->
+
+        <!-- Permanent link to course archive -->
+        <!-- <a class="ui basic secondary left pointing label" href="archive/">Looking for previous terms?</a> -->
+      </div>
+      <br />
+      <p>
+        Computer science fundamentals, with programming in C++.  Build an image processing program, a game of Euchre, a web backend, and a machine learning algorithm.
+        <a href="syllabus.html">
+          <i class="arrow alternate circle right outline icon"></i>
+          Syllabus
+        </a>
+      </p>
+
+      <!-- Announcements -->
+      <div class="ui info message">
+        <div class="header">
+          Final Exam and Review Session
+        </div>
+        <p>
+          The final exam is on <b>Monday, April 24 at 10:30am</b>.  More info on <a href="https://piazza.com/class/lbnv6k5pd0y6bz/post/4058" target="_blank">Piazza</a>.
+        </p>
+        <p>
+          There will be an exam review session on <b>Saturday, April 22 at 4:30pm</b>. More info on
+          <a href="https://piazza.com/class/lbnv6k5pd0y6bz/post/4058" target="_blank">
+            Piazza
+          </a>.
+          <a class="ui label" href="https://umich.zoom.us/j/95745904413" target="_blank">
+            <i class="video icon"></i>
+            Zoom
+          </a>
+          <a class="ui label" data-tooltip="Umich login!" href="https://docs.google.com/document/d/1_msBLzSQ7VcnRj0zMfD61SnEkfpNtOXUCu93yA2fhJk/edit?usp=sharing" target="_blank">
+            <i class="file alternate icon"></i>
+            Worksheet
+          </a>
+          <a class="ui label" data-tooltip="Umich login!" href="https://umich.zoom.us/rec/share/vXoVuJpi-HQ1NdTJnQLn9Y42O1S6Wz90IXOHA6eDChNHz3xiWBLjPqnFecLjreN6.2527GdYMvWz2LrqN" target="_blank">
+            <i class="play icon"></i>
+            Recording
+          </a>
+        </p>
+      </div>
+
+      <!-- Template announcement LEAVE ME HERE -->
+      <!--
+      <div class="ui info message">
+        <div class="header">
+          FIXME title
+        </div>
+        <p>
+          FIXME content
+        </p>
+      </div>
+      -->
+
+      <!-- This Week -->
+      <h2 id="thisweek">This Week</h2>
+      <div class="ui three stackable cards">
+
+        <div class="ui card">
+          <div class="content" style="flex-grow: 0;">
+            <div class="header">Projects</div>
+            <!--
+            <div class="right aligned floating ui red label">
+            Due Tue, Apr 18
+            </div>
+            -->
+          </div>
+          <div class="content">
+            <!--
+            <h4 class="ui header">Machine Learning</h4>
+            -->
+            <div class="ui feed">
+
+              <div class="event">
+                <div class="content">
+                  All projects complete!
+                </div>
+              </div>
+
+              <!--
+              <div class="event">
+                <div class="content">
+                  <div class="summary">
+                    <a class="ui label" href="https://eecs280staff.github.io/p5-ml/" target="_blank">
+                      <i class="file alternate icon"></i>
+                      Spec
+                    </a>
+                    <a class="ui label" href="https://autograder.io/web/project/1874" target="_blank">
+                      <i class="upload icon"></i>
+                      Autograder
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="event">
+                <div class="content">
+                  <div class="summary">
+                    <a class="ui label" href="https://piazza.com/class/lbnv6k5pd0y6bz/post/3776" target="_blank">
+                      <i class="question circle outline icon"></i>
+                      FAQ
+                    </a>
+                    <a class="ui label" href="https://umich.zoom.us/rec/share/cSr_0w_7rw6PgL2Vdb4-mWKNmUcCkQGFquAWtiyXtPa4yhsciNVrZlrlxY71rfJt.OlQSoTCV3SKAKZQT" target="_blank">
+                      <i class="video icon"></i>
+                      Overview
+                    </a>
+                  </div>
+                </div>
+              </div>
+              -->
+
+              <div class="ui divider"></div>
+              <div class="event">
+                <div class="content">
+                  <h4 class="ui header">Quick Links</h4>
+                  <div class="summary">
+                    <a class="ui label" href="https://eecs280staff.github.io/tutorials/" target="_blank">
+                      <i class="tools icon"></i>
+                      Tutorials
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Lab card removed at the end of the semester
+        <div class="ui card">
+            <div class="content" style="flex-grow: 0;">
+              <div class="header">Lab 11</div>
+              <div class="right aligned floating ui red label">
+                Due Sun, Apr 2
+              </div>
+            </div>
+            <div class="content">
+              <div class="ui feed">
+                <div class="event">
+                    <div class="content">
+                      <div class="summary">
+                        Final Exam Review and Reflection
+                      </div>
+                    </div>
+                  </div>
+                  <div class="event">
+                    <div class="content">
+                      <div class="summary">
+                        <a class="ui label" data-tooltip="Umich login!" href="https://drive.google.com/drive/folders/1mOioyY2qK18QtYXG0iM1UMh8Xlx0nRtT?usp=share_link" target="_blank">
+                          <i class="file alternate icon"></i>
+                          Worksheet
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="event">
+                    <div class="content">
+                      Lab 11 will not be graded
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          -->
+
+        <div class="ui card">
+          <div class="content" style="flex-grow: 0;">
+            <div class="header">Lecture</div>
+          </div>
+          <div class="content">
+            <div class="ui feed">
+              <div class="event">
+                <div class="content">
+                  <div class="summary">
+                    In-person
+                    <a class="ui icon label" data-tooltip="Live lecture recordings" href="https://leccap.engin.umich.edu/leccap/site/d2ow9qsi0vqejsv1qne" target="_blank">
+                      <i class="play icon"></i>
+                    </a>
+                    <a class="ui icon label" data-tooltip="Lecture slides (Umich login!)" href="https://drive.google.com/drive/u/1/folders/1XE-1QNJ2xLLwb7p3ZNiGQk6DEW43eMlG" target="_blank">
+                      <i class="file pdf icon"></i>
+                    </a>
+                    <a class="ui icon label" data-tooltip="Lobster visualization tool" href="https://lobster.eecs.umich.edu/" target="_blank">
+                      <i class="bug icon"></i>
+                    </a>
+                  </div>
+                </div>
+              </div><!-- / event -->
+              <div class="event">
+                <div class="content">
+                  <div class="summary">
+                    Studio recordings
+                    <a class="ui icon label" data-tooltip="Studio lecture recordings" href="https://umich.instructure.com/courses/566839/external_tools/49594" target="_blank">
+                      <i class="play icon"></i>
+                    </a>
+                  </div>
+                </div>
+              </div><!-- / event -->
+              <div class="event">
+                <div class="content">
+                  <div class="summary">
+                    Asynchronous
+                    <a class="ui icon label" data-tooltip="Self-paced, interactive lectures" href="https://docs.google.com/document/u/1/d/e/2PACX-1vSBRv6N0r0c0AESTBA44IRRBI5p2lyg59PCd20NcqrL2j267Znkche00aNbbNuic_yC5LeBi95b3Pbm/pub" target="_blank">
+                      <i class="book icon"></i>
+                    </a>
+                  </div>
+                </div>
+              </div><!-- / event -->
+              <div class="event">
+                <div class="content">
+                  <div class="summary">
+                    Zoom
+                    <span class="meta">(6pm only)</span>
+                    <a class="ui icon label" href="https://umich.zoom.us/j/99082629399" target="_blank">
+                      <i class="video icon"></i>
+                    </a>
+                  </div>
+                </div>
+              </div><!-- / event -->
+              <div class="event">
+                <div class="content">
+                  <div class="summary">
+                    Notes
+                    <a class="ui icon label" data-tooltip="Lecture notes" href="https://eecs280staff.github.io/notes/" target="_blank">
+                      <i class="book icon"></i>
+                    </a>
+                  </div>
+                </div>
+              </div><!-- / event -->
+              <div class="event">
+                <div class="content">
+                  <i class="info circle icon"></i>
+                  <a href="syllabus.html#course-overview">
+                    Flexible lecture policy
+                  </a>
+                </div>
+              </div><!-- / event -->
+            </div>
+          </div>
+        </div><!-- / ui card -->
+
+        <div class="ui card">
+          <div class="content" style="flex-grow: 0;">
+            <div class="header">Final Exam</div>
+          </div>
+          <div class="content">
+            <div class="ui feed">
+              <div class="event" style="margin-bottom: 1em;">
+                <div class="content">
+                  <a href="https://piazza.com/class/lbnv6k5pd0y6bz/post/4058">
+                    Logistics and Practice Exams
+                  </a>
+                </div>
+              </div><!-- / event -->
+              <div class="event">
+                <div class="content">
+                  <div class="summary">
+                    Final Exam
+                  </div>
+                  <div class="meta">
+                    <i class="calendar icon"></i>
+                    Mon Apr 24, 10:30 am
+                  </div>
+                </div>
+              </div>
+              <div class="event">
+                <div class="content">
+                  <div class="summary">
+                    Alternate Final Exam
+                  </div>
+                  <div class="meta">
+                    <i class="calendar icon"></i>
+                    Mon Apr 24, 1:30 pm
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div><!-- /ui three cards -->
+      <div class="ui section hidden divider"></div>
+
+      <!-- Calendar
+
+           The FullCalendar JS library inserts a Google Calendar here.  See
+           the JavaScript source code at the end of this file.  Remember to
+           update the 'googleCalendarId' found in the JavaScript code.
+      -->
+      <div id="calendar"></div>
+      <p>
+        <i class="sticky note icon"></i>
+        <a href="https://calendar.google.com/calendar/embed?src=c_df820d052eccdd6d3dc71a473440ca1bdba84dcab85ee7df4e4796501f39206a@group.calendar.google.com&ctz=America%2FNew_York"
+          target="_blank">Open in Google Calendar</a>
+      </p>
+      <div class="ui hidden divider"></div>
+
+
+      <h2 id="requests">Administrative Requests</h2>
+      <p>If there's something not on these forms, you can reach us at <a href="mailto:eecs280admin@umich.edu">eecs280admin@umich.edu</a>.</p>
+      <div class="ui styled fluid accordion">
+
+        <div class="active title">
+          <i class="dropdown icon"></i>
+          Quick Links
+        </div>
+        <div class="active content">
+          <div class="ui three stackable cards">
+
+            <a class="ui raised card" href="https://docs.google.com/forms/d/e/1FAIpQLSet3xs3f4JTC32a37jmbPkeXLAjdX-KhQZqOd3NzGsQevh7EA/viewform?usp=sf_link" target="_blank">
+              <div class="content">
+                <div class="header">
+                  <span>
+                    Extension
+                  </span>
+                </div>
+                <div class="description">
+                  <p>Assignment extension</p>
+                </div>
+              </div>
+            </a>
+
+            <!--
+            <a class="ui raised card" href="https://docs.google.com/forms/d/e/1FAIpQLSc7rdjO_y4ycg_vnJ3xzn2sgO54pRiBTKgYVQBGzve1ebQEyQ/viewform?usp=sf_link" target="_blank">
+              <div class="content">
+                <div class="header">
+                  <span>
+                    Late Add
+                  </span>
+                </div>
+                <div class="description">
+                  <p>Assignment extension for a late course add</p>
+                </div>
+              </div>
+            </a>
+            -->
+
+            <a class="ui raised card" href="https://docs.google.com/forms/d/e/1FAIpQLScusVeKRNBPq3Mo7VIrYfmWtR0j2qsHaPaF1dEybdnxsYGNmg/viewform?usp=sf_link" target="_blank">
+              <div class="content">
+                <div class="header">
+                  <span>
+                    Lab Drop
+                  </span>
+                </div>
+                <div class="description">
+                  <p>Additional lab drop</p>
+                </div>
+              </div>
+            </a>
+          </div><!-- /ui three stackable cards -->
+        </div><!-- /Quick Links -->
+
+        <div class="title">
+          <i class="dropdown icon"></i>
+          Exam requests
+        </div>
+        <div class="content">
+          <div class="ui three stackable cards">
+            <a class="ui raised card" href="https://docs.google.com/forms/d/e/1FAIpQLSc206EbrFkkXlrgiN5Z-I-BYwIya_6H6KGMpmOl1RkmlzcspA/viewform?usp=sf_link" target="_blank">
+              <div class="content">
+                <div class="header">
+                  Accommodation
+                </div>
+                <div class="description">
+                  <p>Request extended time or other exam accommodation</p>
+                </div>
+              </div>
+            </a>
+
+            <a class="ui raised card" href="https://docs.google.com/forms/d/e/1FAIpQLSeK_x4Kor2hDUoq6gLt1KyqKG8cw2jLmniYpuvMNc7QoFEF9A/viewform?usp=sf_link" target="_blank">
+              <div class="content">
+                <div class="header">
+                  <span>
+                    Alternate Midterm
+                  </span>
+                </div>
+                <div class="description">
+                  <p>Report an exam conflict</p>
+                </div>
+              </div>
+            </a>
+
+            <a class="ui raised card" href="https://docs.google.com/forms/d/e/1FAIpQLSdxiTf97012o-fT-cAY4QmCCSIyfsscXpWgCVl_hm9DG5tHkA/viewform?usp=sf_link" target="_blank">
+              <div class="content">
+                <div class="header">
+                  <span>
+                    Alternate Final
+                  </span>
+                </div>
+                <div class="description">
+                  <p>Report an exam conflict</p>
+                </div>
+              </div>
+            </a>
+
+          </div><!-- /ui three stackable cards -->
+        </div><!-- /All -->
+      </div><!-- /ui styled fluid accordion -->
+      <div class="ui hidden divider"></div>
+
+
+      <!-- Schedule -->
+      <h2 id="schedule">Schedule</h2>
+      <table class="ui celled striped table">
+        <thead>
+          <tr>
+            <th class="two wide">Day</th>
+            <th class="four wide">Lecture</th>
+            <th class="two wide">Lab</th>
+            <th class="two wide">Deadline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Week 1<br>
+              Jan 2 - Jan 5
+            </td>
+            <td>
+              <p><span class="ui grey text">01</span> Introduction and Machine Model</p>
+            </td>
+            <td><i>No Lab</i></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              Week 2<br>
+              Jan 9 - 12
+            </td>
+            <td>
+              <p><span class="ui grey text">02</span> Procedural Abstraction, Testing, and Debugging</p>
+              <p><span class="ui grey text">03</span> Pointers</p>
+            </td>
+            <td><span class="ui grey text">01</span> IDE Setup</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              Week 3<br>
+              Jan 16 - 20
+            </td>
+            <td>
+              <p><i>No lecture - MLK Day</i></p>
+              <p><span class="ui grey text">04</span> Arrays</p>
+            </td>
+            <td><span class="ui grey text">02</span> Machine Model, Testing, Unit Testing Framework</td>
+            <td class="red">
+              Project 1<br>
+              <span class="ui small text">Wed Jan 18</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Week 4<br>
+              Jan 23 - 27
+            </td>
+            <td>
+              <p><span class="ui grey text">05</span> Compound Objects</p>
+              <p><span class="ui grey text">06</span> Strings, Streams, and IO</p>
+            </td>
+            <td><span class="ui grey text">03</span> Pointers and Arrays, Detecting Undefined Behavior</td>
+            <td class="red">
+              Entry survey<br>
+              <span class="ui small text">Wed Jan 25</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Week 5<br>
+              Jan 30 - Feb 3
+            </td>
+            <td>
+              <p><span class="ui grey text">07</span> Abstract Data Types in C</p>
+              <p><span class="ui grey text">08</span> Abstract Data Types in C++</p>
+            </td>
+            <td><span class="ui grey text">04</span> Strings and IO</td>
+            <td class="red">
+              Project 2<br>
+              <span class="ui small text">Fri Feb 3</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Week 6<br>
+              Feb 6 - 10
+            </td>
+            <td>
+              <p><span class="ui grey text">09</span> Derived Classes and Inheritance</p>
+              <p><span class="ui grey text">10</span> Polymorphism</p>
+            </td>
+            <td><span class="ui grey text">05</span> Project 3 Intro</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              Week 7<br>
+              Feb 13 - 17
+            </td>
+            <td>
+              <p><span class="ui grey text">11</span> Container ADTs and Generic Programming</p>
+              <p><span class="ui grey text">12</span> Container ADT Interfaces and Invariants</p>
+            </td>
+            <td><span class="ui grey text">06</span> Polymorphism</td>
+            <td class="red">
+              Project 3 Checkpoint CANCELLED<br>
+              <span class="ui small text">Fri Feb 17</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Week 8<br>
+              Feb 20 - 24
+            </td>
+            <td>
+              <p><span class="ui grey text">13</span> Memory Models and Dynamic Memory</p>
+              <p><span class="ui grey text">14</span> Managing Dynamic Memory</p>
+            </td>
+            <td><span class="ui grey text">07</span> Container ADTs</td>
+            <td class="red">
+              Project 3<br>
+              <span class="ui small text">Fri Feb 24</span>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><p><i>Spring Break</i></p></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              Week 9<br>
+              Mar 6 - 10
+            </td>
+            <td>
+              <p><i>No lecture</i></p>
+              <p><i>No lecture</i></p>
+            </td>
+            <td><i>No Lab</i></td>
+            <td class="red">
+              <p>
+                Midterm Exam<br>
+                <span class="ui small text">Wed Mar 8, 7:00pm</span>
+              </p>
+              <p>
+                Alternate<br>
+                <span class="ui small text">Thu Mar 9, 7:00pm</span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Week 10<br>
+              Mar 13 - 17
+            </td>
+            <td>
+              <p><span class="ui grey text">15</span> Deep Copies and The Big Three</p>
+              <p><span class="ui grey text">16</span> Linked Lists</p>
+            </td>
+            <td><span class="ui grey text">08</span> Dynamic Memory and Deep Copies</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              Week 11<br>
+              Mar 20 - 24
+            </td>
+            <td>
+              <p><span class="ui grey text">17</span> Iterators</p>
+              <p><span class="ui grey text">18</span> Recursion</p>
+            </td>
+            <td><span class="ui grey text">09</span> Iterators</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              Week 12<br>
+              Mar 27 - 31
+            </td>
+            <td>
+              <p><span class="ui grey text">19</span> Structural Recursion</p>
+              <p><span class="ui grey text">20</span> Binary Search trees and Maps</p>
+            </td>
+            <td><span class="ui grey text">10</span> Recursion</td>
+            <td class="red">
+              Project 4<br>
+              <span class="ui small text">Wed Mar 29</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Week 13<br>
+              Apr 3 - 7
+            </td>
+            <td>
+              <p><span class="ui grey text">21</span> Function Objects and Imposter Syndrome</p>
+              <p><span class="ui grey text">22</span> Exceptions</p>
+            </td>
+            <td><span class="ui grey text">11</span> Final Exam Review and Reflection</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              Week 14<br>
+              Apr 10 - 14
+            </td>
+            <td>
+              <p>Panel Sessions</p>
+              <p><i>No lecture</i></p>
+            </td>
+            <td><i>No Lab</i></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              Week 15<br>
+              Apr 17 - 21
+            </td>
+            <td>
+              <p><i>No lecture</i></p>
+            </td>
+            <td><i>No Lab</i></td>
+            <td class="red">
+              <p>
+                Project 5<br>
+                <span class="ui small text">Tue Apr 18</span>
+              </p>
+              <p>
+                Exit Survey<br>
+                <span class="ui small text">Thu Apr 20</span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="red">
+              <p>
+                Final Exam<br>
+                <span class="ui small text">Mon Apr 24, 10:30am</span>
+              </p>
+              <p>
+                Alternate<br>
+                <span class="ui small text">Mon Apr 24, 1:30pm</span>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="ui hidden divider"></div>
+
+
+      <!-- People section -->
+      <h2 id="people">People</h2>
+      <p>Reach us at <a href="mailto:eecs280admin@umich.edu">eecs280admin@umich.edu</a></p>
+      <div class="ui hidden divider"></div>
+      <h3>Faculty</h3>
+      <div class="ui four stackable cards">
+
+        <a class="ui fluid card" href="https://andrewdeorio.com" target="_blank">
+          <div class="image">
+            <img src="assets/headshots/awdeorio.jpg" alt="Andrew DeOrio head shot" />
+          </div>
+          <div class="content">
+            <div class="header">
+              Andrew DeOrio
+            </div>
+            <div class="meta">
+              he/him
+            </div>
+            <div class="description">
+              <p><span class="ui small text">awdeorio@umich.edu</span></p>
+              <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+              <span data-tooltip="Linux"><i class="icon linux"></i></span>
+              <span data-tooltip="Emacs"><i class="icon-emacs"></i></span>
+              <span data-tooltip="Hometown: Farmington, MI"><i class="icon map pin"></i></span>
+            </div>
+          </div>
+          <div class="content">
+            <span data-tooltip="I raise chickens."><em data-emoji="chicken"></em></span>
+            <span data-tooltip="Goats!"><em data-emoji="goat"></em></span>
+            <span data-variation="wide fixed" data-tooltip="One of my life goals is visit every national park."><em data-emoji="hiking_boot"></em></span>
+            <span data-variation="wide fixed" data-tooltip="Recommend music for me!  I listen to a lot of WCBN, our student-run radio station."><em data-emoji="notes"></em></span>
+          </div>
+        </a><!-- /fluid card -->
+
+        <div class="ui fluid card">
+          <div class="image">
+            <img src="assets/headshots/jjuett.jpg" alt="James Juett head shot"/>
+          </div>
+          <div class="content">
+            <div class="header">
+              James Juett
+            </div>
+            <div class="meta">
+              he/him
+            </div>
+            <div class="description">
+              <p><span class="ui small text">jjuett@umich.edu</span></p>
+              <span data-tooltip="Windows"><i class="icon windows"></i></span>
+              <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+              <span data-tooltip="Hometown: Marion, IA"><i class="icon map pin"></i></span>
+            </div>
+          </div>
+          <div class="content">
+            <span data-tooltip="I like extremely spicy food"><em data-emoji="hot_pepper"></em></span>
+            <span data-tooltip="More coffee pls"><em data-emoji="coffee"></em></span>
+            <span data-tooltip="I grow vegetables in the summer"><em data-emoji="tomato"></em></span>
+            <span data-tooltip="I build real/virtual escape rooms"><em data-emoji="jigsaw"></em></span>
+          </div>
+        </div><!-- /fluid card -->
+
+        <div class="ui fluid card">
+          <div class="image">
+            <img src="assets/headshots/sofias.jpg" alt="Sofia Saleem head shot"/>
+          </div>
+          <div class="content">
+            <div class="header">
+              Sofia Saleem
+            </div>
+            <div class="meta">
+              she/her
+            </div>
+            <div class="description">
+              <p><span class="ui small text">sofias@umich.edu</span></p>
+              <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+              <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+            </div>
+          </div>
+          <div class="content">
+            <span data-tooltip="Women in CS, CS in K-12 curriculum"><em data-emoji="woman_technologist"></em></span>
+            <span data-tooltip="Yoga"><em data-emoji="woman_in_lotus_position"></em></span>
+            <span data-tooltip="Tennis"><em data-emoji="tennis"></em></span>
+            <span data-tooltip="Travel to far-away places"><em data-emoji="airplane"></em></span>
+          </div>
+        </div><!-- /fluid card -->
+
+        <div class="ui fluid card">
+          <div class="image">
+            <img src="assets/headshots/razak.jpg" alt="Saquib Razak head shot"/>
+          </div>
+          <div class="content">
+            <div class="header">
+              Saquib Razak
+            </div>
+            <div class="meta">
+              <!-- FIXME pronouns -->
+            </div>
+            <div class="description">
+              <p><span class="ui small text">razak@umich.edu</span></p>
+              <span data-tooltip="Windows"><i class="icon windows"></i></span>
+              <span data-tooltip="Linux"><i class="icon linux"></i></span>
+              <span data-tooltip="Vim"><i class="icon-vim"></i></span>
+              <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+            </div>
+          </div>
+          <div class="content">
+            <span data-tooltip="Tennis"><em data-emoji="tennis"></em></span>
+            <span data-tooltip="Running"><em data-emoji="man_running_tone3"></em></span>
+            <span data-tooltip="Coffee"><em data-emoji="coffee"></em></span>
+            <span data-tooltip="Donuts"><em data-emoji="doughnut"></em></span>
+          </div>
+        </div><!-- /fluid card -->
+
+      </div><!-- /ui stackable cards -->
+
+      <h3>IAs and GSIs</h3>
+      <div class="ui four stackable cards">
+        <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/fiahmed.jpg" alt="Fizza Ahmed head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Fizza Ahmed
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:fiahmed@umich.edu" target="_blank" data-tooltip="fiahmed@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="Windows"><i class="icon windows"></i></span>
+                  <span data-tooltip="Visual Studio"><i class="icon-visual-studio"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Canton, MI"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="crafty"><em data-emoji="yarn"></em></span>
+                <span data-tooltip="love cats"><em data-emoji="cat2"></em></span>
+                <span data-tooltip="#1 sweet potato fan"><em data-emoji="sweet_potato"></em></span>
+                <span data-tooltip="outdoors"><em data-emoji="leaves"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/raiyahmd.jpg" alt="Raiyan Ahmed head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Raiyan Ahmed
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:raiyahmd@umich.edu" target="_blank" data-tooltip="raiyahmd@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="Windows"><i class="icon windows"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Canton, MI"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I love identifying local flora"><em data-emoji="seedling"></em></span>
+                <span data-tooltip="I'm a fan of all creepy crawlies"><em data-emoji="snail"></em></span>
+                <span data-tooltip="Play me in ping pong!"><em data-emoji="ping_pong"></em></span>
+                <span data-tooltip="I can do a mean fade"><em data-emoji="man_getting_haircut"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/abismuth.jpg" alt="Alex Bismuth head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Alex Bismuth
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:abismuth@umich.edu" target="_blank" data-tooltip="abismuth@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="Windows"><i class="icon windows"></i></span>
+                  <span data-tooltip="Linux"><i class="icon linux"></i></span>
+                  <span data-tooltip="Visual Studio"><i class="icon-visual-studio"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <!-- <span data-tooltip="Hometown: Canton, MI"><i class="icon map pin"></i></span> -->
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="Applied as a chef in Antarctica. Secret goal: Become King of the emperor penguins."><em data-emoji="flag_aq"></em></span>
+                <span data-tooltip="Learned how to swim by watching octopuses in nature documentaries. Not well."><em data-emoji="octopus"></em></span>
+                <span data-tooltip="Climbed 14,000ft for the world record highest table tennis match. Goats stole my paddles. Didn't get it."><em data-emoji="goat"></em></span>
+                <span data-tooltip="Started programming in college. Often feel like an imposter."><em data-emoji="alien"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/chapmwt.jpg" alt="Taylor Chapman head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Taylor Chapman
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:chapmwt@umich.edu" target="_blank" data-tooltip="chapmwt@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="Hometown: New York, NY"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I play guitar and ukelele!"><em data-emoji="guitar"></em></span>
+                <span data-tooltip="Wrestle and box for fun :)"><em data-emoji="women_wrestling"></em></span>
+                <span data-tooltip="The arb is my favorite place on campus"><em data-emoji="herb"></em></span>
+                <span data-tooltip="Talk to me about cute dog videos!"><em data-emoji="dog"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+        <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/fimaria.jpg" alt="Maria Fields head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Maria Fields
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:fimaria@umich.edu" target="_blank" data-tooltip="fimaria@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Detroit, MI"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I participate in pageants (Miss USA; Miss America)"><em data-emoji="crown"></em></span>
+                <span data-tooltip="I enjoy lab research"><em data-emoji="microscope"></em></span>
+                <span data-tooltip="I love to travel"><em data-emoji="airplane"></em></span>
+                <span data-tooltip="Founder of a tutoring non-profit"><em data-emoji="books"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/kartigup.jpg" alt="Kartikeya Gupta head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Kartikeya Gupta
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:kartigup@umich.edu" target="_blank" data-tooltip="kartigup@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <!-- <span data-tooltip="Hometown: New York, NY"><i class="icon map pin"></i></span> -->
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="Love to cook new dishes!"><em data-emoji="cooking"></em></span>
+                <span data-tooltip="Like to lift in free time!"><em data-emoji="man_lifting_weights_tone4"></em></span>
+                <span data-tooltip="Always open to new music suggestions!"><em data-emoji="musical_note"></em></span>
+                <span data-tooltip="Huge F1 fan!"><em data-emoji="red_car"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+        <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/djgoreli.jpg" alt="Daniel Gorelik head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Daniel Gorelik
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:djgoreli@umich.edu" target="_blank" data-tooltip="djgoreli@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="Windows"><i class="icon windows"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <!-- <span data-tooltip="Hometown: Naperville, IL"><i class="icon map pin"></i></span> -->
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I love to play beach volleyball"><em data-emoji="volleyball"></em></span>
+                <span data-tooltip="I will challenge anyone in ping pong"><em data-emoji="ping_pong"></em></span>
+                <span data-tooltip="I am a card game enthusiast"><em data-emoji="black_joker"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/hajratwt.jpg" alt="Tea Hajratwala head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                T&eacute;a Hajratwala
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:hajratwt@umich.edu" target="_blank" data-tooltip="hajratwt@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <!-- <span data-tooltip="Hometown: Naperville, IL"><i class="icon map pin"></i></span> -->
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I play the clarinet!"><em data-emoji="musical_score"></em></span>
+                <span data-tooltip="Proud plant mom."><em data-emoji="herb"></em></span>
+                <span data-tooltip="I bake fancy deserts."><em data-emoji="cupcake"></em></span>
+                <span data-tooltip="Send video game recs!"><em data-emoji="video_game"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/fhematti.jpg" alt="Faranak Hematti head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Faranak Hematti
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:fhematti@umich.edu" target="_blank" data-tooltip="fhematti@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <!-- <span data-tooltip="Hometown: Naperville, IL"><i class="icon map pin"></i></span> -->
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I'm from Wisconsin"><em data-emoji="cheese"></em></span>
+                <span data-tooltip="I love thrifting"><em data-emoji="jeans"></em></span>
+                <span data-tooltip="Pranks are my passion"><em data-emoji="joy"></em></span>
+                <span data-tooltip="I love spin class"><em data-emoji="woman_biking"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/ciheanyi.jpg" alt="Chimmuanya Iheanyi-Igwe head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Chimmuanya Iheanyi-Igwe
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:ciheanyi@umich.edu" target="_blank" data-tooltip="ciheanyi@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Elkridge, MD"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="Cooking"><em data-emoji="woman_cook_tone5"></em></span>
+                <span data-tooltip="Love making Spotify playlists"><em data-emoji="notes"></em></span>
+                <span data-tooltip="Proud plant mom"><em data-emoji="seedling"></em></span>
+                <span data-tooltip="Traveling"><em data-emoji="earth_africa"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/jjaehnig.jpg" alt="Jenna Jaehnig head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Jenna Jaehnig
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:jjaehnig@umich.edu" target="_blank" data-tooltip="jjaehnig@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="Hometown: Cupertino, CA"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I love to read!"><em data-emoji="books"></em></span>
+                <span data-tooltip="I'm always listening to music (Taylor Swift)"><em data-emoji="notes"></em></span>
+                <span data-tooltip="I have two cats!"><em data-emoji="cat"></em></span>
+                <span data-tooltip="I write for The Michigan Daily :)"><em data-emoji="pen_ballpoint"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/kedij.jpg" alt="Kedi Jiang head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Kedi Jiang
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:kedij@umich.edu" target="_blank" data-tooltip="kedij@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <!-- <span data-tooltip="Hometown: Cupertino, CA"><i class="icon map pin"></i></span> -->
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="Burritos are the best!"><em data-emoji="burrito"></em></span>
+                <span data-tooltip="I am addicted to fruit tea with cheese foam and real taro milk tea"><em data-emoji="bubble_tea"></em></span>
+                <span data-tooltip="I want to collect everything from jELLYCAT"><em data-emoji="cat"></em></span>
+                <span data-tooltip="Atacama desert is on my bucket list because it's one of the best places for star gazing"><em data-emoji="night_with_stars"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/aakhalid.jpg" alt="Aman Khalid head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Aman Khalid
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:aakhalid@umich.edu" target="_blank" data-tooltip="aakhalid@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="Linux"><i class="icon linux"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Pittsburgh, PA"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I play the violin!"><em data-emoji="violin"></em></span>
+                <span data-tooltip="I drink way too much coffee"><em data-emoji="coffee"></em></span>
+                <span data-tooltip="Ask me for book recommendations!"><em data-emoji="books"></em></span>
+                <span data-tooltip="Let's talk compilers/programming languages (and why Rust is great)"><em data-emoji="crab"></em></span>
+              </div>
+            </div>
+        </div><!-- /fluid card -->
+        <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/akorot.jpg" alt="Alec Korotney head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Alec Korotney
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:akorot@umich.edu" target="_blank" data-tooltip="akorot@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="Windows"><i class="icon windows"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Ypsilanti, MI"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I love horror movies!"><em data-emoji="clapper"></em></span>
+                <span data-tooltip="Acting, writing, directing, singing"><em data-emoji="performing_arts"></em></span>
+                <span data-tooltip="Relearning to play the violin!"><em data-emoji="violin"></em></span>
+                <span data-tooltip="Math and cs puzzles"><em data-emoji="1234"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/ashvink.jpg" alt="Ashvin Kumar head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Ashvin Kumar
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:ashvink@umich.edu" target="_blank" data-tooltip="ashvink@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="CLion"><i class="icon-clion"></i></span>
+                  <span data-tooltip="Hometown: Bloomfield Hills, MI"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="Cooking"><em data-emoji="cooking"></em></span>
+                <span data-tooltip="Reading (especially sci-fi)"><em data-emoji="book"></em></span>
+                <span data-tooltip="Lighthouses (especially lighthouses in Michigan)"><em data-emoji="ship"></em></span>
+                <span data-tooltip="I'm learning how to make pottery"><em data-emoji="amphora"></em></span>
+              </div>
+            </div>
+        </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/ohjun.jpg" alt="Oh Jun Kweon head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Oh Jun Kweon
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:ohjun@umich.edu" target="_blank" data-tooltip="ohjun@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Dubai, UAE"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I grew up in Dubai"><em data-emoji="dromedary_camel"></em></span>
+                <span data-tooltip="I can play the bell tower"><em data-emoji="bell"></em></span>
+                <span data-tooltip="I skydived (skydove?) for the first time last year"><em data-emoji="parachute"></em></span>
+                <span data-tooltip="Tell me about your favorite book!"><em data-emoji="books"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/rladdha.jpg" alt="Richa Laddha head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Richa Laddha
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:rladdha@umich.edu" target="_blank" data-tooltip="rladdha@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="Overland Park, Kansas"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I play soccer!"><em data-emoji="soccer"></em></span>
+                <span data-tooltip="I paint (mostly acrylics)!"><em data-emoji="art"></em></span>
+                <span data-tooltip="I've ridden the world's tallest water slide!"><em data-emoji="ocean"></em></span>
+                <span data-tooltip="Love playing Catan and Ticket to Ride!"><em data-emoji="game_die"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+
+        <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/jsliu.jpg" alt="Justin Liu head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Justin Liu
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:jsliu@umich.edu" target="_blank" data-tooltip="jsliu@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Windows"><i class="icon windows"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Visual Studio"><i class="icon-visual-studio"></i></span>
+                  <span data-tooltip="Vim"><i class="icon-vim"></i></span>
+                  <span data-tooltip="Hometown: Novi, MI"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="Love snow and Michigan winters"><em data-emoji="snowman"></em></span>
+                <span data-tooltip="Catch me playing at the CCRB/NCRB"><em data-emoji="basketball"></em></span>
+                <span data-tooltip="Recently got into drawing!"><em data-emoji="crayon"></em></span>
+                <span data-tooltip="league of legends, tft, clash royale"><em data-emoji="video_game"></em></span>
+              </div>
+            </div>
+        </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/leheng.jpg" alt="Leheng Lu head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Leheng Lu
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:leheng@umich.edu" target="_blank" data-tooltip="leheng@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="Windows 10"><i class="icon windows"></i></span>
+                  <span data-tooltip="Linux"><i class="icon linux"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Pycharm"><i class="icon pycharm"></i></span>
+                  <span data-tooltip="Intellij IDEA"><i class="icon-idea"></i></span>
+                  <span data-tooltip="Hometown: Guangzhou, China"><i class="icon map pin"></i></span>
+                </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I love playing badminton since I was a kid."><em data-emoji="badminton"></em></span>
+                <span data-tooltip="I enjoy watching movies when I am free."><em data-emoji="cinema"></em></span>
+                <span data-tooltip="Video game player, especially RPG games!"><em data-emoji="desktop"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/imanmal.jpg" alt="Iman Malik head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Iman Malik
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:imanmal@umich.edu" target="_blank" data-tooltip="imanmal@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Cupertino, CA"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I drink boba every 3.09 days"><em data-emoji="bubble_tea"></em></span>
+                <span data-tooltip="This is my favorite emoji"><em data-emoji="new_moon_with_face"></em></span>
+                <span data-tooltip="I like Game of Thrones and Narcos"><em data-emoji="tv"></em></span>
+                <span data-tooltip="I know the entire alphabet"><em data-emoji="abcd"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/evmarcus.jpg" alt="Evan Marcus head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Evan Marcus
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:evmarcus@umich.edu" target="_blank" data-tooltip="evmarcus@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="Windows"><i class="icon windows"></i></span>
+                  <span data-tooltip="Visual Studio"><i class="icon-visual-studio"></i></span>
+                  <span data-tooltip="Hometown: Southgate, MI"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I like videogames!"><em data-emoji="video_game"></em></span>
+                <span data-tooltip="I like to make art!"><em data-emoji="art"></em></span>
+                <span data-tooltip="I like musical theater!"><em data-emoji="musical_note"></em></span>
+                <span data-tooltip="I like teaching!"><em data-emoji="man_teacher"></em></span>
+              </div>
+            </div>
+        </div><!-- /fluid card -->
+        <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/pmathena.jpg" alt="Parker Mathena head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Parker Mathena
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:pmathena@umich.edu" target="_blank" data-tooltip="pmathena@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Southgate, MI"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="FIFA and Mario Kart beast"><em data-emoji="video_game"></em></span>
+                <span data-tooltip="I watch and play soccer!"><em data-emoji="soccer"></em></span>
+                <span data-tooltip="I have two dogs and two cats"><em data-emoji="dog"></em></span>
+                <span data-tooltip="I love to travel"><em data-emoji="airplane"></em></span>
+              </div>
+            </div>
+        </div><!-- /fluid card -->
+        <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/adviti.jpg" alt="Adviti Mishra head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Adviti Mishra
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:adviti@umich.edu" target="_blank" data-tooltip="adviti@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="Hometown: Mumbai, India"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="Consistently in the top 0.1% of Taylor Swift's listeners on Spotify "><em data-emoji="musical_note"></em></span>
+                <span data-tooltip="I love going on 10km runs"><em data-emoji="athletic_shoe"></em></span>
+                <span data-tooltip="I know about my ancestry to up to 8 generations"><em data-emoji="family_mwg"></em></span>
+                <span data-tooltip="The only dishes I cook really well include different preparations of egg and avocado"><em data-emoji="cooking"></em></span>
+              </div>
+            </div>
+        </div><!-- /fluid card -->
+        <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/mmiyazi.jpg" alt="Mustafa Miyaziwala head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Mustafa Miyaziwala
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:mmiyazi@umich.edu" target="_blank" data-tooltip="mmiyazi@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="Windows"><i class="icon windows"></i></span>
+                  <span data-tooltip="Linux"><i class="icon linux"></i></span>
+                  <span data-tooltip="Visual Studio"><i class="icon-visual-studio"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <!-- <span data-tooltip="Hometown: Mumbai, India"><i class="icon map pin"></i></span> -->
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="Trains!"><em data-emoji="train2"></em></span>
+                <span data-tooltip="I race hotwheels cars down random ramps on UM campus"><em data-emoji="race_car"></em></span>
+                <span data-tooltip="I love chocolate milk"><em data-emoji="chocolate_bar"></em></span>
+                <span data-tooltip="I play pickleball"><em data-emoji="tennis"></em></span>
+              </div>
+            </div>
+        </div><!-- /fluid card -->
+        <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/vnaray.jpg" alt="Viroshan Narayan head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Viroshan Narayan
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:vnaray@umich.edu" target="_blank" data-tooltip="vnaray@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="Hometown: Canton, MI"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="Card game enthusiast"><em data-emoji="spades"></em></span>
+                <span data-tooltip="I love to play ping pong!"><em data-emoji="ping_pong"></em></span>
+                <span data-tooltip="Pianist for 15 years"><em data-emoji="musical_keyboard"></em></span>
+                <span data-tooltip="I love to drive (especially stick!)"><em data-emoji="red_car"></em></span>
+              </div>
+            </div>
+        </div><!-- /fluid card -->
+
+        <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/anishnya.jpg" alt="Anish Nyayachavadi head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Anish Nyayachavadi
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:anishnya@umich.edu" target="_blank" data-tooltip="anishnya@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <!-- <span data-tooltip="Hometown: Canton, MI"><i class="icon map pin"></i></span> -->
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="Proud Canadian"><em data-emoji="flag_ca"></em></span>
+                <span data-tooltip="Ask me about systems research in CS"><em data-emoji="test_tube"></em></span>
+                <span data-tooltip="Huge Bears Fan (JF1 2023 NFL MVP)"><em data-emoji="football"></em></span>
+                <span data-tooltip="Trying to start dark sky watching"><em data-emoji="night_with_stars"></em></span>
+              </div>
+            </div>
+        </div><!-- /fluid card -->
+
+        <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/ashpatel.jpg" alt="Ashish Patel head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Ashish Patel
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:ashpatel@umich.edu" target="_blank" data-tooltip="ashpatel@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="It's not that I am bad at poker, its just an entertainment expense for me"><em data-emoji="spades"></em></span>
+                <span data-tooltip="Catch me in the Grove or Elbel playing volleyball"><em data-emoji="volleyball"></em></span>
+                <span data-tooltip="Always looking to get victory points in Catan"><em data-emoji="sheep"></em></span>
+                <span data-tooltip="I love listening to speeches and practicing public speaking"><em data-emoji="mega"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/patis.jpg" alt="Shweta Pati head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Shweta Pati
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:patis@umich.edu" target="_blank" data-tooltip="patis@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="Windows"><i class="icon windows"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="figure skate"><em data-emoji="ice_skate"></em></span>
+                <span data-tooltip="Dance"><em data-emoji="dancer_tone5"></em></span>
+                <span data-tooltip="music"><em data-emoji="notes"></em></span>
+                <span data-tooltip="food"><em data-emoji="cake"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+        <div class="ui fluid card">
+          <div class="image">
+            <img src="assets/headshots/mipeng.jpg" alt="Michael Peng head shot" />
+          </div>
+          <div class="content">
+            <div class="header small">
+              Michael Peng
+            </div>
+            <div class="meta">
+              he/him
+            </div>
+            <div class="description">
+                <a class="email" href="mailto:mipeng@umich.edu" target="_blank" data-tooltip="mipeng@umich.edu"><i class="icon envelope"></i></a>
+                <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                <span data-tooltip="CLion"><i class="icon-clion"></i></span>
+                <span data-tooltip="Hometown: Andover, MA"><i class="icon map pin"></i></span>
+            </div>
+          </div>
+          <div class="content">
+            <div class="description">
+              <span data-tooltip="Trying to track all my time"><em data-emoji="clock3"></em></span>
+              <span data-tooltip="Enjoying cups of 30% decaf coffee"><em data-emoji="coffee"></em></span>
+              <span data-tooltip="Classical and chiptune enthusiast"><em data-emoji="musical_note"></em></span>
+              <span data-tooltip="FIRST Tech Challenge alum"><em data-emoji="mechanical_arm"></em></span>
+            </div>
+          </div>
+        </div><!-- /fluid card -->
+        <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/qwzhao.jpg" alt="Wenzhao Qiu head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Wenzhao Qiu
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:qwzhao@umich.edu" target="_blank" data-tooltip="qwzhao@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="Windows"><i class="icon windows"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Visual Studio"><i class="icon-visual-studio"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="AI"><em data-emoji="flying_saucer"></em></span>
+                <span data-tooltip="writing completely useless programs that contribute nothing to society"><em data-emoji="chart_with_downwards_trend"></em></span>
+                <span data-tooltip="art"><em data-emoji="art"></em></span>
+                <span data-tooltip="anime/manga"><em data-emoji="japanese_goblin"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/praut.jpg" alt="Parth Raut head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Parth Raut
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:praut@umich.edu" target="_blank" data-tooltip="praut@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Visual Studio"><i class="icon-visual-studio"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="building electric cars from scratch!"><em data-emoji="red_car"></em></span>
+                <span data-tooltip="I try to read at least 1 book a month"><em data-emoji="books"></em></span>
+                <span data-tooltip="interested in robotics"><em data-emoji="robot"></em></span>
+                <span data-tooltip="I like to play tennis"><em data-emoji="tennis"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/aravikum.jpg" alt="Akshaya Ravikumar head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Akshaya Ravikumar
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:aravikum@umich.edu" target="_blank" data-tooltip="aravikum@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="Hometown: Sharon, MA"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="Longboarding"><em data-emoji="skateboard"></em></span>
+                <span data-tooltip="Thrifting"><em data-emoji="shirt"></em></span>
+                <span data-tooltip="Music"><em data-emoji="musical_note"></em></span>
+                <span data-tooltip="Boba"><em data-emoji="cup_with_straw"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/ysbeih.jpg" alt="Yusuf Sbeih head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Yusuf Sbeih
+              </div>
+              <div class="meta">
+                
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:ysbeih@umich.edu" target="_blank" data-tooltip="ysbeih@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <!-- <span data-tooltip="Hometown: Sharon, MA"><i class="icon map pin"></i></span> -->
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="Palestinian"><em data-emoji="flag_ps"></em></span>
+                <span data-tooltip="Arsenal fan"><em data-emoji="soccer"></em></span>
+                <span data-tooltip="Traveling to new places"><em data-emoji="airplane"></em></span>
+                <span data-tooltip="Going to the beach"><em data-emoji="island"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/schabseb.jpg" alt="Sebastian Schab head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Sebastian Schab
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:schabseb@umich.edu" target="_blank" data-tooltip="schabseb@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Grand Rapids, MI"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I have two cats"><em data-emoji="cat"></em></span>
+                <span data-tooltip="I love playing guitar and piano (and singing!)"><em data-emoji="guitar"></em></span>
+                <span data-tooltip="NBA basketball fan"><em data-emoji="basketball"></em></span>
+                <span data-tooltip="I've been skateboarding for 10 years"><em data-emoji="skateboard"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/omidsh.jpg" alt="Omid Shahidi head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Omid Shahidi
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:omidsh@umich.edu" target="_blank" data-tooltip="omidsh@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Windows"><i class="icon windows"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="Visual Studio"><i class="icon-visual-studio"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Tehran, Iran"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="vinyl records collector"><em data-emoji="notes"></em></span>
+                <span data-tooltip="wanna-be home cook"><em data-emoji="cooking"></em></span>
+                <span data-tooltip="men's mental health advocate"><em data-emoji="brain"></em></span>
+                <span data-tooltip="armchair philosopher"><em data-emoji="chair"></em></span>
+                <!-- <span data-tooltip="distributed systems enthusiast"><em data-emoji="gear"></em></span> -->
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+        <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/joshsieg.jpg" alt="Joshua Siegel head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Joshua Siegel
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:joshsieg@umich.edu" target="_blank" data-tooltip="joshsieg@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Omaha, NE"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="NBA"><em data-emoji="basketball"></em></span>
+                <span data-tooltip="Movies"><em data-emoji="clapper"></em></span>
+                <span data-tooltip="FIFA"><em data-emoji="video_game"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/stoneann.jpg" alt="Ann Stone head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Ann Stone
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:stoneann@umich.edu" target="_blank" data-tooltip="stoneann@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="Windows"><i class="icon windows"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Novi, Michigan"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="Smile through the pain and challenges"><em data-emoji="woozy_face"></em></span>
+                <span data-tooltip="major sweet tooth"><em data-emoji="cookie"></em></span>
+                <span data-tooltip="love dancing and moving to the rhythm"><em data-emoji="dancer"></em></span>
+                <span data-tooltip="be amazed"><em data-emoji="star_struck"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/clsun.jpg" alt="Claire Sun head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Claire Sun
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:clsun@umich.edu" target="_blank" data-tooltip="clsun@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Carlisle, MA"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I love eggs &lt;3"><em data-emoji="cooking"></em></span>
+                <span data-tooltip="I like to run"><em data-emoji="woman_running_tone2"></em></span>
+                <span data-tooltip="Send me song recs!"><em data-emoji="notes"></em></span>
+                <span data-tooltip="I hate butterflies ://"><em data-emoji="butterfly"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/nuppula.jpg" alt="Nishika Uppula head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Nishika Uppula
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:nuppula@umich.edu" target="_blank" data-tooltip="nuppula@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="Hometown: Novi, MI"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="Volleyball"><em data-emoji="volleyball"></em></span>
+                <span data-tooltip="Love travelling"><em data-emoji="beach"></em></span>
+                <span data-tooltip="Biking"><em data-emoji="woman_biking_tone3"></em></span>
+                <span data-tooltip="Love any and all desserts"><em data-emoji="cupcake"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/rithiv.jpg" alt="Rithi Vaithyanathan head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Rithi Vaithyanathan
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:rithiv@umich.edu" target="_blank" data-tooltip="rithiv@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <!-- <span data-tooltip="Hometown: Skokie, IL"><i class="icon map pin"></i></span> -->
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I love dogs and have a dog named Roxie"><em data-emoji="dog"></em></span>
+                <span data-tooltip="Fly Eagles Fly and One Pride"><em data-emoji="football"></em></span>
+                <span data-tooltip="Love to travel, wannabe granola girl"><em data-emoji="airplane"></em></span>
+                <span data-tooltip="Favorite sport to watch <3"><em data-emoji="basketball"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/miavuc.jpg" alt="Mia Vuckovic head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Mia Vuckovic
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:miavuc@umich.edu" target="_blank" data-tooltip="miavuc@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Skokie, IL"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="Spending time outside"><em data-emoji="park"></em></span>
+                <span data-tooltip="Coffee fanatic"><em data-emoji="coffee"></em></span>
+                <span data-tooltip="I love hiking"><em data-emoji="hiking_boot"></em></span>
+                <span data-tooltip="Cooking vegetarian food"><em data-emoji="avocado"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/wmarcoyu.jpg" alt="Yu Wang head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Yu Wang
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:wmarcoyu@umich.edu" target="_blank" data-tooltip="wmarcoyu@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <!-- <span data-tooltip="Hometown: Skokie, IL"><i class="icon map pin"></i></span> -->
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I love to travel!"><em data-emoji="airplane"></em></span>
+                <span data-tooltip="Photography, especially astrophotography"><em data-emoji="camera"></em></span>
+                <span data-tooltip="Stargazing!"><em data-emoji="milky_way"></em></span>
+                <span data-tooltip="Lifting weight is my daily routine."><em data-emoji="person_lifting_weights"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/vswei.jpg" alt="Vincent Wei head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Vincent Wei
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:vswei@umich.edu" target="_blank" data-tooltip="vswei@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <!-- <span data-tooltip="Hometown: Skokie, IL"><i class="icon map pin"></i></span> -->
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I have two cats"><em data-emoji="cat"></em></span>
+                <span data-tooltip="I'd want to travel to South America some day"><em data-emoji="earth_americas"></em></span>
+                <span data-tooltip="Potato Curry at No Thai"><em data-emoji="shallow_pan_of_food"></em></span>
+                <span data-tooltip="Football"><em data-emoji="soccer"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/musicer.jpg" alt="Kevin Wang head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Kevin Wang
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:musicer@umich.edu" target="_blank" data-tooltip="musicer@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="Linux"><i class="icon linux"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I started as a clarinet performance major! Still like classical but I listen to a lot of genres these days"><em data-emoji="musical_note"></em></span>
+                <span data-tooltip="Having a great time with Elden Ring right now! I also play a lot of rouge-likes and strategy"><em data-emoji="video_game"></em></span>
+                <span data-tooltip="Currently reading Eating to Extinction by Dan Saladino"><em data-emoji="books"></em></span>
+                <span data-tooltip="Worst animal. I will die on this hill."><em data-emoji="panda_face"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/qinjuanx.jpg" alt="Qinjuan Xie head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Qinjuan Xie
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:qinjuanx@umich.edu" target="_blank" data-tooltip="qinjuanx@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Windows"><i class="icon windows"></i></span>
+                  <span data-tooltip="Linux"><i class="icon-linux"></i></span>
+                  <span data-tooltip="Ubuntu"><i class="icon ubuntu"></i></span>
+                  <span data-tooltip="Visual Studio"><i class="icon-visual-studio"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Sichuan, China"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="Grew crystals via layering before I chose CS"><em data-emoji="woman_scientist_tone1"></em></span>
+                <span data-tooltip="Piano player"><em data-emoji="musical_keyboard"></em></span>
+                <span data-tooltip="Try to be a singer"><em data-emoji="headphones"></em></span>
+                <span data-tooltip="Start learning guitar"><em data-emoji="guitar"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/brightxu.jpg" alt="Bright Xu head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Bright Xu
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:brightxu@umich.edu" target="_blank" data-tooltip="brightxu@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="macOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Troy, MI"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I'm a huge apple fan"><em data-emoji="computer"></em></span>
+                <span data-tooltip="I cook to stress relief"><em data-emoji="hamburger"></em></span>
+                <span data-tooltip="I enjoy working out and longboarding"><em data-emoji="man_lifting_weights"></em></span>
+                <span data-tooltip="I love whole milk"><em data-emoji="milk"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+        <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/eyuan.jpg" alt="Emily Yuan head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Emily Yuan
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:eyuan@umich.edu" target="_blank" data-tooltip="eyuan@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <!-- <span data-tooltip="Hometown: Bellevue, WA"><i class="icon map pin"></i></span> -->
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I'm from the dc area!"><em data-emoji="cityscape"></em></span>
+                <span data-tooltip="crochet"><em data-emoji="yarn"></em></span>
+                <span data-tooltip="ice cream"><em data-emoji="ice_cream"></em></span>
+                <span data-tooltip="send me music recs!"><em data-emoji="notes"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/chrzhang.jpg" alt="Chris Zhang head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Chris Zhang
+              </div>
+              <div class="meta">
+                he/him
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:chrzhang@umich.edu" target="_blank" data-tooltip="chrzhang@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="CLion"><i class="icon-clion"></i></span>
+                  <span data-tooltip="Hometown: Novi, MI"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span ><em data-emoji="golf"></em></span>
+                <span ><em data-emoji="football"></em></span>
+                <span ><em data-emoji="beer"></em></span>
+                <span ><em data-emoji="airplane"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+        <div class="ui fluid card">
+          <div class="image">
+            <img src="assets/headshots/elainezh.jpg" alt="Elaine Zhang head shot" />
+          </div>
+          <div class="content">
+            <div class="header small">
+              Elaine Zhang
+            </div>
+            <div class="meta">
+              she/her
+            </div>
+            <div class="description">
+                <a class="email" href="mailto:elainezh@umich.edu" target="_blank" data-tooltip="elainezh@umich.edu"><i class="icon envelope"></i></a>
+                <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                <span data-tooltip="Hometown: Bellevue, WA"><i class="icon map pin"></i></span>
+            </div>
+          </div>
+          <div class="content">
+            <div class="description">
+              <span data-tooltip="Cat person"><em data-emoji="cat"></em></span>
+              <span data-tooltip="Scared of chickens"><em data-emoji="chicken"></em></span>
+              <span data-tooltip="Love the outdoors"><em data-emoji="camping"></em></span>
+              <span data-tooltip="Yay"><em data-emoji="star"></em></span>
+            </div>
+          </div>
+        </div><!-- /fluid card -->
+        <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/yojozho.jpg" alt="Joyce Zhou head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Joyce Zhou
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:yojozho@umich.edu" target="_blank" data-tooltip="yojozho@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+                  <span data-tooltip="Xcode"><i class="icon-xcode"></i></span>
+                  <!-- <span data-tooltip="Hometown: Romeo, MI"><i class="icon map pin"></i></span> -->
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I love bread"><em data-emoji="bread"></em></span>
+                <span data-tooltip="I like to paint"><em data-emoji="art"></em></span>
+                <span data-tooltip="I like eating cake"><em data-emoji="cake"></em></span>
+                <span data-tooltip="I want a pet chicken"><em data-emoji="chicken"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+        <div class="ui fluid card">
+            <div class="image">
+              <img src="assets/headshots/kamiz.jpg" alt="Kami Ziolkowski head shot" />
+            </div>
+            <div class="content">
+              <div class="header small">
+                Kami Ziolkowski
+              </div>
+              <div class="meta">
+                she/her
+              </div>
+              <div class="description">
+                  <a class="email" href="mailto:kamiz@umich.edu" target="_blank" data-tooltip="kamiz@umich.edu"><i class="icon envelope"></i></a>
+                  <span data-tooltip="Windows"><i class="icon windows"></i></span>
+                  <span data-tooltip="Visual Studio"><i class="icon-visual-studio"></i></span>
+                  <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
+                  <span data-tooltip="Hometown: Romeo, MI"><i class="icon map pin"></i></span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <span data-tooltip="I love dancing and doing Zumba"><em data-emoji="dancer_tone2"></em></span>
+                <span data-tooltip="I make a mean chocolate chip cookie"><em data-emoji="cookie"></em></span>
+                <span data-tooltip="Alpha Phi Omega + Phi Sigma Rho"><em data-emoji="star"></em></span>
+                <span data-tooltip="I have an extreme love for cheese"><em data-emoji="cheese"></em></span>
+              </div>
+            </div>
+          </div><!-- /fluid card -->
+
+      </div><!-- /ui stackable cards -->
+
+      <div class="ui hidden divider"></div>
+    </div><!-- /ui text container -->
+  </div><!-- /pusher -->
+
+  <!-- Footer -->
+  <footer class="ui vertical footer segment">
+  </footer>
+
+
+  <script>
+   // Sidebar show and hide logic.
+   //
+   // On large screens, show the sidebar by default.  On small screens, hide it.
+   (function() {
+     renderSidebar();
+   })();
+
+   function isSmallScreen() {
+     return screen.width < 900;
+   }
+
+   function renderSidebar() {
+     $sidebar = $('.ui.sidebar');
+     $sidebar.sidebar({
+       dimPage: false,
+       transition: 'overlay',
+       mobileTransition: 'overlay',
+       exclusive: false,
+       closable: false
+     });
+     $sidebar.sidebar('attach events', '#left-sidebar-toggle');
+     if (!isSmallScreen()) {
+       $sidebar.sidebar('toggle');
+     }
+   }
+  </script>
+
+  <script>
+   // Accordion show/hide initialization
+   // https://fomantic-ui.com/modules/accordion.html#initializing-an-accordion
+   // https://fomantic-ui.com/modules/accordion.html#/settings
+   $('.ui.accordion')
+    .accordion({
+      exclusive: false,
+    })
+   ;
+  </script>
+
+  <script>
+   // Insert Google Calendar in <div id="calendar">
+   //
+   // REMINDER: update googleCalendarId each semester
+   //
+   // Uses the FullCalendar library and connects to Google Calendar
+   // https://fullcalendar.io/docs
+   // https://fullcalendar.io/docs/google-calendar
+   document.addEventListener('DOMContentLoaded', function() {
+     var calendarEl = document.getElementById('calendar');
+     var calendar = new FullCalendar.Calendar(calendarEl, {
+       // Google Calendar API, DO NOT CHANGE
+       // https://fullcalendar.io/docs/google-calendar
+       googleCalendarApiKey: 'AIzaSyAiEWXOLNCeznI7k6r0-taknkWGh0rcRwU',
+
+       // Google Calendar ID CHANGE THIS EACH SEMESTER
+       events: {
+         googleCalendarId: 'c_df820d052eccdd6d3dc71a473440ca1bdba84dcab85ee7df4e4796501f39206a@group.calendar.google.com',
+       },
+
+       // Custom buttons to switch between office hours and lab calendars.
+       // We need these to define custom click callbacks to force event hiding.
+       // https://fullcalendar.io/docs/customButtons
+       customButtons: {
+        toggleOH: {
+          text: 'OH',
+          click: function() {
+            calendar.changeView('_');
+            calendar.changeView(isSmallScreen() ? 'timeGridOHDay' : 'timeGridOHWeek');
+          }
+        },
+        toggleLecture: {
+          text: 'Lecture',
+          click: function() {
+            calendar.changeView('_');
+            calendar.changeView(isSmallScreen() ? 'timeGridLectureDay' : 'timeGridLectureWeek');
+          }
+        },
+        toggleLabs: {
+          text: 'Labs',
+          click: function() {
+            calendar.changeView('_');
+            calendar.changeView(isSmallScreen() ? 'timeGridLabsDay' : 'timeGridLabsWeek');
+          }
+        },
+        toggleAll: {
+          text: 'All',
+          click: function() {
+            calendar.changeView('_');
+            calendar.changeView(isSmallScreen() ? 'timeGridDay' : 'timeGridWeek');
+          }
+        }
+      },
+
+       // Tool bar options.  Hide "today" button on mobile to save space.
+       // https://fullcalendar.io/docs/headerToolbar
+       headerToolbar: {
+        start: 'toggleAll,toggleOH,toggleLecture,toggleLabs',
+        end: isSmallScreen() ? 'prev,next' : 'today prev,next',
+      },
+
+       // Custom views to switch between office hours and lab calendars.
+       // There are six, since we want different sizing for small screens.
+       // https://fullcalendar.io/docs/custom-view-with-settings
+       views: {
+        timeGridOHWeek: {
+         type: 'timeGridWeek',
+       },
+
+       timeGridOHDay: {
+         type: 'timeGridDay',
+       },
+
+       timeGridLectureWeek: {
+         type: 'timeGridWeek',
+       },
+
+       timeGridLectureDay: {
+          type: 'timeGridDay',
+       },
+       
+       timeGridLabsWeek: {
+         type: 'timeGridWeek',
+       },
+       
+       timeGridLabsDay: {
+         type: 'timeGridDay',
+       },
+
+       // Dummy view to force remounting on view change
+       // Workaround for: https://github.com/fullcalendar/fullcalendar/issues/5543
+       _: {
+         type: 'list'
+       }
+     },
+
+       // View options
+       // https://fullcalendar.io/docs/timegrid-view
+       initialView: isSmallScreen() ? 'timeGridDay' : 'timeGridWeek',
+       allDaySlot: true,
+       allDayText: '',
+       nowIndicator: true,
+       weekends: true,
+
+       // Don't scroll, just show everything
+       slotMinTime: '08:00:00',
+       slotMaxTime: '21:00:00',
+       height: 'auto',
+
+       // Selectively recolor and hide calendar events
+       // https://fullcalendar.io/docs/event-render-hooks
+       eventContent: setupEvent,
+
+       // Add click-for-popup to calendar events
+       // https://fullcalendar.io/docs/event-render-hooks
+       eventDidMount: addPopup,
+
+       // Prepare calendar events for a view change
+       // This function runs every time the view switches
+       // https://fullcalendar.io/docs/view-render-hooks
+       viewDidMount: changeEventView,
+
+       // Improve mobile viewing with different shape
+       aspectRatio: isSmallScreen() ? .75 : 1.35,
+     });
+     calendar.render();
+
+     // Add label before buttons (But not on small screens because there isn't enough room)
+     if (!isSmallScreen()) {
+       $('.fc-toggleOH-button').parent().before('<div style="display: inline; vertical-align: middle;">Show:</div>'); 
+     }
+   });
+
+   function setupEvent(arg) {
+    // Remove events that are not in the current view and recolor if needed
+    if (filterEvent(arg)) {
+      recolorCalendarEvent(arg);
+    }
+  }
+
+  function changeEventView(arg) {
+    // Reset all events to 'display:auto' when the view changes.
+    // Change the opacity of the buttons to indicate selection.
+    var events  = arg.view.calendar.getEvents();
+    events.forEach(function (e) {
+      e.setProp('display', 'auto');
+    });
+
+    var view = arg.view.type;     
+    if (view.toLowerCase().includes('oh')) {
+      $('.fc-toggleOH-button').css('opacity', '1');
+      $('.fc-toggleLecture-button').css('opacity', '0.65');
+      $('.fc-toggleLabs-button').css('opacity', '0.65');
+      $('.fc-toggleAll-button').css('opacity', '0.65');
+    }
+    else if (view.toLowerCase().includes('lecture')) {
+      $('.fc-toggleOH-button').css('opacity', '0.65');
+      $('.fc-toggleLecture-button').css('opacity', '1');
+      $('.fc-toggleLabs-button').css('opacity', '0.65');
+      $('.fc-toggleAll-button').css('opacity', '0.65');
+    }
+    else if (view.toLowerCase().includes('labs')) {
+      $('.fc-toggleOH-button').css('opacity', '0.65');
+      $('.fc-toggleLecture-button').css('opacity', '0.65');
+      $('.fc-toggleLabs-button').css('opacity', '1');
+      $('.fc-toggleAll-button').css('opacity', '0.65');
+    }
+    else {
+      $('.fc-toggleOH-button').css('opacity', '0.65');
+      $('.fc-toggleLecture-button').css('opacity', '0.65');
+      $('.fc-toggleLabs-button').css('opacity', '0.65');
+      $('.fc-toggleAll-button').css('opacity', '1');
+    }
+  }
+
+  function filterEvent(arg) {
+    // Filter events by type, return true/false to avoid recoloring invisible events
+    //
+    // arg.event has property 'display' that allows hiding specific events
+    var view = arg.view.type;
+    var title = arg.event.title;
+    if (view.toLowerCase().includes('oh')) {
+      if (title.toLowerCase().includes('lab') || title.toLowerCase().includes('lecture')) {
+        arg.event.setProp('display', 'none');
+        return false;
+      }
+    }
+    else if (view.toLowerCase().includes('labs')) {
+      if (title.toLowerCase().includes('office hours') || title.toLowerCase().includes('lecture')) {
+        arg.event.setProp('display', 'none');
+        return false;
+      }
+      // Extra case for calendar events that use "OH" instead of "office hours"
+      // (Ex. Labeling in-person vs. remote OH days with all-day events)
+      else if (title.includes('OH')) {
+        arg.event.setProp('display', 'none');
+        return false;
+      }
+    }
+    else if (view.toLowerCase().includes('lecture')) {
+      if (title.toLowerCase().includes('lab') || title.toLowerCase().includes('office hours')) {
+        arg.event.setProp('display', 'none');
+        return false;
+      }
+      else if (title.includes('OH')) {
+        arg.event.setProp('display', 'none');
+        return false;
+      }
+    }
+    return true;
+  }
+
+   function recolorCalendarEvent(arg) {
+     // Change calendar event colors based on string prefix
+     if (
+       arg.event.title.toLowerCase().includes('due') ||
+       arg.event.title.toLowerCase().includes('deadline') ||
+       arg.event.title.toLowerCase().includes('exam')
+     ) {
+       arg.backgroundColor = '#D39E00';
+       arg.borderColor = '#D39E00';
+     }
+     else if (arg.event.title.toLowerCase().includes('lecture')) {
+       arg.backgroundColor = '#3D5B9A';
+       arg.borderColor = '#3D5B9A';
+     }
+     else if (arg.event.title.toLowerCase().includes('lab')) {
+       arg.backgroundColor = '#3A87AD';
+       arg.borderColor = '#3A87AD';
+     }
+     else if (arg.event.title.toLowerCase().includes('proffice hours')) {
+       arg.backgroundColor = '#428BCA';
+       arg.borderColor = '#428BCA';
+     }
+     else if (
+       arg.event.title.toLowerCase().includes('office hours') ||
+       arg.event.title.includes('OH') // case-sensitive
+     ) {
+       arg.backgroundColor = '#BBDEFB';
+       arg.borderColor = '#BBDEFB';
+       arg.textColor = '#424242';
+     }
+   }
+
+   function addPopup(arg) {
+     // Add a popup to a calendar event
+     //
+     // arg.event.extendedProps contains extra information from the Google
+     // Calendar event, e.g., description and location.
+     var element = arg.el;
+     var location = arg.event.extendedProps.location || '';
+     var description = arg.event.extendedProps.description || '';
+
+     // Remove link to Google Calendar automatically added by FullCalendar
+     $(element).removeAttr('href');
+
+     // Add Popup to DOM, links in the location field are clickable
+     // https://semantic-ui.com/modules/popup.html#/usage
+     //
+     // NOTE: overflow:scroll avoids text spilling out of the popup on iOS.
+     if (location.toLowerCase().startsWith('http')) {
+       var location_html = `<a href="${location}" target="_blank">${location}</a>`;
+     } else {
+       var location_html = `${location}<br>${description}`;
+     }
+     $(element).popup({
+       on: 'click',
+
+       // Prevent popups from getting destroyed when view changes
+       // https://fomantic-ui.com/modules/popup.html#/settings
+       observeChanges: false,
+
+       html: `
+         <div class="header">${arg.event.title}</div>
+         <div class="content" style="overflow:auto">${location_html}</div>
+       `,
+     });
+   }
+  </script>
+
+</body>
+</html>
